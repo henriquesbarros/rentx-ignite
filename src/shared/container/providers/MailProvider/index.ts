@@ -9,7 +9,7 @@ const mailProvider = {
     ses: container.resolve(SESMailProvider),
 };
 
-container.registerSingleton<IMailProvider>(
+container.registerInstance<IMailProvider>(
     "MailProvider",
     mailProvider[process.env.MAIL_PROVIDER]
 );
